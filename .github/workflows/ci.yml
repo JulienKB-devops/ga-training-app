@@ -27,5 +27,13 @@ jobs:
           bun-version: "latest"
       - name: "Install deps"
         run: "bun install --frozen-lockfile"
+      - name: Vérifier si le dossier modules existe
+        run: |
+          if test -d modules; then
+            echo "Le dossier modules existe."
+          else
+            echo "Le dossier modules est manquant."
+            exit 1
+          fi
       - name: "Run test"
         run: "bun test"
