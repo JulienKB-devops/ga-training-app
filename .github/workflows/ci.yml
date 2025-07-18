@@ -29,7 +29,7 @@ jobs:
         run: "bun install --frozen-lockfile"
       - name: Vérifier si le dossier modules existe
         run: |
-          if test -d modules; then
+          if test -d node_modules; then
             echo "Le dossier modules existe."
           else
             echo "Le dossier modules est manquant."
