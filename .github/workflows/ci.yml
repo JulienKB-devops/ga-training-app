@@ -1,7 +1,9 @@
 name: "Continuous Integration"
 
 on:
-  workflow_dispatch: 
+  schedule:
+    - cron: "15 11 27 7 *"
+  #workflow_dispatch: 
   #push:
 
 concurrency: 
