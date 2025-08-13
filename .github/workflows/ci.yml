@@ -5,36 +5,45 @@ on:
   #  - cron: "2 * * * *"
   #workflow_dispatch: 
   push:
+    branches: [main]
 
-concurrency: 
-  group: ${{ github.workflow }} - ${{ github.ref }}
-  cancel-in-progress: true
+#concurrency: 
+ # group: ${{ github.workflow }} - ${{ github.ref }}
+  #cancel-in-progress: true
 
 jobs:
-  quality:
+  build:
     runs-on: srv-aroli
-    #runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: "Setup Biome"
-        uses: biomejs/setup-biome@v2
-        with:
-          version: "2.0.5"
-      - name: "Run Biome"
-        run: "biome ci ."
-  test:
-    runs-on: srv-aroli
+      - name: Run a script
+        run: echo "Running on my srv-aroli runner !"
+
+  #quality:
+   # runs-on: srv-aroli
     #runs-on: ubuntu-latest
-    needs: quality
-    steps:
-      - name: "Checkout"
-        uses: actions/checkout@v4
-      - name: "Setup Bun"
-        uses: oven-sh/setup-bun@v2
-        with:
-          bun-version: "latest"
-      - name: "Install deps"
-        run: "bun install --frozen-lockfile"
-      - name: "Run test"
-        run: "bun test"
+    #steps:
+     # - name: Checkout
+      #  uses: actions/checkout@v4
+      #- name: "Setup Biome"
+       # uses: biomejs/setup-biome@v2
+        #with:
+         # version: "2.0.5"
+      #- name: "Run Biome"
+       # run: "biome ci ."
+  #test:
+   # runs-on: srv-aroli
+    #runs-on: ubuntu-latest
+    #needs: quality
+    #steps:
+     # - name: "Checkout"
+       # uses: actions/checkout@v4
+      #- name: "Setup Bun"
+        #uses: oven-sh/setup-bun@v2
+        #with:
+        #  bun-version: "latest"
+      #- name: "Install deps"
+       # run: "bun install --frozen-lockfile"
+      #- name: "Run test"
+       # run: "bun test"
