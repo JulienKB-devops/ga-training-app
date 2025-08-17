@@ -18,7 +18,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       - name: Run a script
-        run: echo "Running on my srv-aroli runner !"
+        run: echo "Running on my self-hosted-runners runner !"
 
   #quality:
    # runs-on: srv-aroli
