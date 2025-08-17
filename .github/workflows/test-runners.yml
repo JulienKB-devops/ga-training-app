@@ -1,0 +1,11 @@
+name: Test Runner
+
+on:
+  workflow_dispatch: # déclenchement manuel depuis l’onglet Actions
+
+jobs:
+  test:
+    runs-on: [self-hosted, linux, x64, self-hosted-runners]
+    steps:
+      - name: Vérifier le runner
+        run: echo "Hello 🚀 je tourne bien sur mon runner self-hosted 'self-hosted-runners'"
