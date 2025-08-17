@@ -13,7 +13,7 @@ on:
 
 jobs:
   build:
-    runs-on: srv-aroli
+    runs-on: self-hosted-runners
     steps:
       - name: Checkout
         uses: actions/checkout@v4
