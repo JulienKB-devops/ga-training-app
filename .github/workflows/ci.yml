@@ -18,8 +18,8 @@ jobs:
       - self-hosted
       - label-11
     steps:
-      #- name: Checkout
-      #  uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4
       - name: Run a script
         run: echo "Running on my gh-runner-1 runner !"
 
