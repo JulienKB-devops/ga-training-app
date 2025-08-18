@@ -3,10 +3,10 @@ name: "Continuous Integration"
 on:
   #schedule:
   #  - cron: "2 * * * *"
-  workflow_dispatch: 
- # push: 
-  #  branches: 
-    #  - main
+  #workflow_dispatch: 
+  push: 
+    branches: 
+      - main
 
 #concurrency: 
  # group: ${{ github.workflow }} - ${{ github.ref }}
@@ -16,7 +16,7 @@ jobs:
   build:
     runs-on: 
       - self-hosted
-      - label-1
+      - label-11
     steps:
       #- name: Checkout
       #  uses: actions/checkout@v4
