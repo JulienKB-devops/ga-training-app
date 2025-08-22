@@ -28,9 +28,10 @@ jobs:
 
       - name: Run SonarQube Scan
         uses: SonarSource/sonarqube-scan-action@v5.3.0
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
         with:
-          host: ${{ secrets.SONAR_HOST_URL }}
-          login: ${{ secrets.SONAR_TOKEN }}
           projectBaseDir: "."
           projectKey: "my-typescript-project"
           projectName: "My TypeScript Project"
