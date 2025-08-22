@@ -11,8 +11,8 @@ jobs:
   sonarqube:
     name: SonarQube Trigger
     runs-on: 
-      - self-hosted
-      - label-11
+      - my self-hosted runner
+      - myself
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
