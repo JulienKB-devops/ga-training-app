@@ -12,7 +12,7 @@ jobs:
     name: SonarQube Trigger
     runs-on: 
       - self-hosted
-      - myself
+      - my-self
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
