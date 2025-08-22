@@ -20,11 +20,11 @@ jobs:
           fetch-depth: 0
 
       - name: Install dependencies
-        run: npm install
+        #run: npm install
 
       # Optionnel si tu veux compiler avant analyse
       - name: Build project
-        run: npm run build || echo "No build step"
+        #run: npm run build || echo "No build step"
 
       - name: Run SonarQube Scan
         uses: kitabisa/sonarqube-action@v1.2.0
